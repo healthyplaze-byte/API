@@ -6,8 +6,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: true,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    origin: [
+      "https://hms-2gc7kh0ir-dgeorgedigitals-projects.vercel.app"
+    ],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     credentials: true,
   });
 
@@ -21,9 +23,8 @@ async function bootstrap() {
 
   const port = process.env.PORT || 4001;
   await app.listen(port);
-  // eslint-disable-next-line no-console
+
   console.log(`Smart Hotel OS API listening on port ${port}`);
 }
 
 bootstrap();
-

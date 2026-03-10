@@ -1,0 +1,69 @@
+import { PrismaService } from "../prisma/prisma.service";
+export declare class GuestsService {
+    private readonly prisma;
+    constructor(prisma: PrismaService);
+    findAll(): Promise<{
+        email: string | null;
+        id: string;
+        fullName: string;
+        phone: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string | null;
+        loyaltyPoints: number;
+        loyaltyTier: string;
+    }[]>;
+    findOne(id: string): Promise<{
+        email: string | null;
+        id: string;
+        fullName: string;
+        phone: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string | null;
+        loyaltyPoints: number;
+        loyaltyTier: string;
+    } | null>;
+    create(data: {
+        userId?: string;
+        fullName: string;
+        email?: string;
+        phone?: string;
+    }): Promise<{
+        email: string | null;
+        id: string;
+        fullName: string;
+        phone: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string | null;
+        loyaltyPoints: number;
+        loyaltyTier: string;
+    }>;
+    update(id: string, data: {
+        fullName?: string;
+        email?: string;
+        phone?: string;
+    }): Promise<{
+        email: string | null;
+        id: string;
+        fullName: string;
+        phone: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string | null;
+        loyaltyPoints: number;
+        loyaltyTier: string;
+    }>;
+    remove(id: string): Promise<{
+        email: string | null;
+        id: string;
+        fullName: string;
+        phone: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string | null;
+        loyaltyPoints: number;
+        loyaltyTier: string;
+    }>;
+}
